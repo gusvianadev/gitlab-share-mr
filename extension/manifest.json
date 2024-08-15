@@ -1,0 +1,20 @@
+{
+	"manifest_version": 3,
+	"name": "Share Gitlab MR",
+	"description": "Share your gitlab merge request with your team",
+	"version": "1.0",
+	"content_scripts": [
+		{
+			"js": ["scripts/content.js"],
+			"matches": [
+				"https://gitlab.com/compeat/development/r365/*/merge_requests/*"
+			]
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"resources": ["icons/*"],
+			"matches": ["https://gitlab.com/*"]
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"name": "gitlab-share-mr",
+	"type": "module",
+	"devDependencies": {
+		"chrome-types": "^0.1.297",
+		"prettier": "^3.3.3"
+	}
+}
