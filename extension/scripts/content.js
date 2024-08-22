@@ -1,4 +1,4 @@
-(function content() {
+function createDiscordShareButton() {
 	const titleElement = document.querySelector(
 		'h1[data-testid="title-content"]'
 	);
@@ -20,6 +20,22 @@
 		const text = `:merge_request: [${titleText.trim()}](${url})`;
 
 		navigator.clipboard.writeText(text);
+		shareWithDiscordBot();
 	};
 	titleElement.appendChild(icon);
+}
+
+async function shareWithDiscordBot() {
+	// First let's just test the bot at localhost:8000/up
+	// make a URL object for the URL, we'll use it later and simply make the get request
+	try {
+		const url = new URL("http://localhost:8000/up");
+		await fetch(url);
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+(function content() {
+	createDiscordShareButton();
 })();
